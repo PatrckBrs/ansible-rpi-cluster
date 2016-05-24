@@ -3,6 +3,10 @@
   remote_user: root
   roles:
     - configuration_base
+  vars:
+  # created with:
+  # python -c 'import crypt; print crypt.crypt("This is my Password", "$1$SomeSalt$")'
+  password: $1$SomeSalt$UqddPX3r4kH3UL5jq5/ZI.
     
   tasks:
   - name: APT-GET UPDATE
