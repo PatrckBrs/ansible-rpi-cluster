@@ -19,4 +19,4 @@
       - logwatch
       
   - name: user account creation
-    user: name=sladerz comment=SladerZ group=users,wheel append=yes shell=/bin/bash createhome=yes
+    user: name=sladerz comment=SladerZ shell=/bin/bash createhome=yes
