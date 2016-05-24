@@ -18,5 +18,5 @@
       - mutt
       - logwatch
       
-  - name: user account creation
+  - name: User Account Creation
     user: name=sladerz comment=SladerZ shell=/bin/bash createhome=yes
