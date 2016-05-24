@@ -6,5 +6,4 @@
     
   tasks:
    - name: Installer Apache
-     apt: name=apache2 state=present
-       update_cache=yes
+     apt: name=apache2 state=present update_cache=yes
