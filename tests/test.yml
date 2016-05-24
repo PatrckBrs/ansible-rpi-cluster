@@ -18,6 +18,7 @@
       - mutt
       - logwatch
       - logrotate
+      - denyhosts
       
   - name: User Account Creation
     user: name=sladerz comment=SladerZ shell=/bin/bash createhome=yes
