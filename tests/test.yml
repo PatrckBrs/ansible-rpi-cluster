@@ -2,7 +2,7 @@
 - hosts: localhost
   remote_user: root
   roles:
-    - role_under_test
+    - configuration_base
     
   tasks:
   - name: APT-GET UPDATE
