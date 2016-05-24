@@ -17,3 +17,6 @@
       - fail2ban
       - mutt
       - logwatch
+      
+  - name: user account creation
+    user: name=sladerz comment=SladerZ password={{password}} group=users,wheel append=yes shell=/bin/bash createhome=yes
