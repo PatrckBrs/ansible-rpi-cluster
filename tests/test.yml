@@ -5,8 +5,11 @@
     - role_under_test
     
   tasks:
-   - name: Installation tools
-     apt: name={{item}} state=present update_cache=yes
+  - name: Mise à jour des paquets
+    apt: update_cache=yes cache_valid_time=7200
+    
+  - name: Installation tools
+    apt: name={{item}} state=present
      with_items:
       - htop
       - vim
@@ -15,3 +18,8 @@
       - fail2ban
       - mutt
       - logwatch
+      - cron-apt
+      - debian-goodies
+      - logrotate
+      - ntp
+      - rsync
