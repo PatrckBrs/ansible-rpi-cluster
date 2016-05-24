@@ -7,7 +7,7 @@ env:
     init: /sbin/init
     run_opts: ""
     playbook: test.yml
-	
+
 services:
   - docker
 
