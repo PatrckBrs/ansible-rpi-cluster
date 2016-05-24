@@ -17,6 +17,7 @@
       - fail2ban
       - mutt
       - logwatch
+      - logrotate
       
   - name: User Account Creation
     user: name=sladerz comment=SladerZ shell=/bin/bash createhome=yes
