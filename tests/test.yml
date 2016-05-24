@@ -8,4 +8,3 @@
    - name: Installer Apache
      apt: name=apache2 state=present
        update_cache=yes
-       sudo: yes
