@@ -1,6 +1,6 @@
 ---
 language: python
-python: "3.5"
+python: "3.5.1"
 
 env:
   - SITE=config.yml
