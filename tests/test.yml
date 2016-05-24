@@ -5,5 +5,13 @@
     - role_under_test
     
   tasks:
-   - name: Installer HTOP
-     apt: name=htop state=present update_cache=yes
+   - name: Installation tools
+     apt: name={{item}} state=present update_cache=yes
+     with_items:
+      - htop
+      - vim
+      - ufw
+      - rkhunter
+      - fail2ban
+      - mutt
+      - logwatch
