@@ -5,5 +5,5 @@
     - role_under_test
     
   tasks:
-   - name: Installer Apache
-     apt: name=apache2 state=present update_cache=yes
+   - name: Installer HTOP
+     apt: name=htop state=present update_cache=yes
