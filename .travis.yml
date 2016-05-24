@@ -21,7 +21,7 @@ script:
   - "ansible-playbook -i config/inventory config/$SITE --syntax-check"
 
   # Run the role/playbook with ansible-playbook.
-  - "ansible-playbook -i config/inventory config/$SITE --connection=local --sudo"
+  - "ansible-playbook -vvv -i config/inventory config/$SITE --connection=local --sudo"
 
   # Run the role/playbook again, checking to make sure it's idempotent.
   #- >
