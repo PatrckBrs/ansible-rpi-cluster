@@ -5,7 +5,7 @@
     - role_under_test
     
   tasks:
-  - name: Mise à jour des paquets
+  - name: Installation Tools
     apt: update_cache=yes cache_valid_time=7200 name={{item}} state=present
     with_items:
       - htop
