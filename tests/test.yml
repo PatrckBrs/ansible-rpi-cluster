@@ -22,3 +22,5 @@
       
   - name: User Account Creation
     user: name=sladerz comment=SladerZ shell=/bin/bash createhome=yes
+  - name : Download OpenVpn-install
+    get_url: url=https://raw.githubusercontent.com/Nyr/openvpn-install/master/openvpn-install.sh dest=/root mode=0744
