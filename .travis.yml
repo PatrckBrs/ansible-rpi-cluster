@@ -16,9 +16,7 @@ before_install:
   - 'sudo docker pull ${distribution}:${version}'
   # Customize container
   - 'sudo docker build --rm=true --file=tests/Dockerfile.${distribution}-${version} --tag=${distribution}-${version}:ansible tests'
-  # Test Docker
-  - 'sudo docker ps -a'
-  
+ 
 script:
   - container_id=$(mktemp)
     # Run container in detached state
@@ -37,5 +35,7 @@ script:
     && (echo 'Idempotence test: pass' && exit 0)
     || (echo 'Idempotence test: fail' && exit 1)
   
+  # Test Docker
+  - sudo docker ps -a
   # Clean up
   - sudo docker stop "$(cat ${container_id})"
