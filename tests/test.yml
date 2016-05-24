@@ -4,7 +4,7 @@
   roles:
     - role_under_test
     
-- tasks:
+  tasks:
    - name: Installer Apache
      apt: name=apache2 state=present
        update_cache=yes
