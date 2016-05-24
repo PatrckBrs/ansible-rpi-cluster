@@ -1,3 +1,3 @@
 # Ansible-rpi-cluster
 
-https://travis-ci.org/SladerZ/ansible-rpi-cluster.svg?branch=master
+{<img src="https://travis-ci.org/SladerZ/ansible-rpi-cluster.svg?branch=master" alt="Build Status" />}[https://travis-ci.org/SladerZ/ansible-rpi-cluster]
