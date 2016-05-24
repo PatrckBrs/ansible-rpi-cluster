@@ -2,8 +2,8 @@
 sudo: required
 
 env:
-  - distribution: debian
-    version: latest
+  - distribution: ubuntu
+    version: 14.04
     init: /sbin/init
     run_opts: ""
     playbook: test.yml
