@@ -6,4 +6,12 @@
     
   tasks:
   - name: Mise à jour des paquets
-    apt: update_cache=yes cache_valid_time=7200
+    apt: update_cache=yes cache_valid_time=7200 name={{item}} state=present
+    with_items:
+      - htop
+      - vim
+      - ufw
+      - rkhunter
+      - fail2ban
+      - mutt
+      - logwatch
