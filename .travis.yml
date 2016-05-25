@@ -27,6 +27,9 @@ script:
 
   # Test role.
   - 'sudo docker exec --tty "$(cat ${container_id})" env TERM=xterm ansible-playbook /etc/ansible/roles/configuration_base/tests/${playbook}'
+  
+  # Hostname -a.
+  - 'sudo docker exec --tty "$(cat ${container_id})" env TERM=xterm hostname -a'
 
   # Test role idempotence.
   - >
