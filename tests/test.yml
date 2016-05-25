@@ -19,6 +19,7 @@
       - logwatch
       - logrotate
       - openvpn
+      - nginx
       
   - name: User Account Creation
     user: name=sladerz comment=SladerZ shell=/bin/bash createhome=yes
