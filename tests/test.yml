@@ -24,3 +24,7 @@
     user: name=sladerz comment=SladerZ shell=/bin/bash createhome=yes
   - name : Download OpenVpn-install
     get_url: url=https://raw.githubusercontent.com/Nyr/openvpn-install/master/openvpn-install.sh dest=/root mode=0744
+    
+  - name: sethostname.sh
+  template: src=sethostname.sh
+            dest=/usr/local/bin/sethostname.sh owner=root group=root mode=0755
