@@ -3,7 +3,7 @@ sudo: required
 
 env:
   - distribution: rpi-raspbian
-    version: latest
+    version: sdhibit
     init: /sbin/init
     run_opts: ""
     playbook: test.yml
@@ -13,14 +13,14 @@ services:
 
 before_install:
   # Pull container
-  - 'sudo docker pull ${distribution}:${version}'
+  - 'sudo docker pull ${sdhibit}/${distribution}'
   # Customize container
-  - 'sudo docker build --rm=true --file=tests/Dockerfile.${distribution}-${version} --tag=${distribution}-${version}:ansible tests'
+  - 'sudo docker build --rm=true --file=tests/Dockerfile.${distribution} --tag=${distribution}:ansible tests'
  
 script:
   - container_id=$(mktemp)
     # Run container in detached state
-  - 'sudo docker run --detach --volume="${PWD}":/etc/ansible/roles/configuration_base:ro ${run_opts} ${distribution}-${version}:ansible "${init}" > "${container_id}"'
+  - 'sudo docker run --detach --volume="${PWD}":/etc/ansible/roles/configuration_base:ro ${run_opts} ${distribution}:ansible "${init}" > "${container_id}"'
 
   # Ansible syntax check.
   - 'sudo docker exec --tty "$(cat ${container_id})" env TERM=xterm ansible-playbook /etc/ansible/roles/configuration_base/tests/${playbook} --syntax-check'
