@@ -13,6 +13,6 @@ RUN echo "[local]\nlocalhost ansible_connection=local" > /etc/ansible/hosts
 
 # Run Ansible with GitHub
 RUN git clone https://github.com/SladerZ/ansible-rpi-cluster.git /tmp
-CMD ["ls /tmp"]
-#WORKDIR /tmp/ansible-rpi-cluster/tests
-#RUN ansible-playbook /tmp/ansible-rpi-cluster/tests/test.yml -c local
+
+WORKDIR /tmp/ansible-rpi-cluster
+RUN ansible-playbook tests/test.yml -c local
