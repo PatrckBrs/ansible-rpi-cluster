@@ -12,5 +12,5 @@ RUN apt-get install -y ansible
 RUN echo "[local]\nlocalhost ansible_connection=local" > /etc/ansible/hosts
 
 # Run Ansible with GitHub
-ADD git clone https://github.com/SladerZ/ansible-rpi-cluster /tmp
-RUN ansible-playbook /tmp/ansible-rpi-cluster/tests/test.yml -c local
+#ADD git clone https://github.com/SladerZ/ansible-rpi-cluster /tmp
+#RUN ansible-playbook /tmp/ansible-rpi-cluster/tests/test.yml -c local
