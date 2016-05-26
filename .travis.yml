@@ -1,6 +1,8 @@
 ---
 sudo: required
 
+language: ruby
+
 env:
   - distribution: ubuntu
     version: 14.04
