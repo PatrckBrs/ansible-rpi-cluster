@@ -1,4 +1,4 @@
-FROM sdhibit/rpi-raspbian
+FROM ubuntu:latest
 RUN apt-get -y update
 
 # Install Ansible
