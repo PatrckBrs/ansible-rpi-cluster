@@ -2,8 +2,8 @@
 sudo: required
 
 env:
-  - distribution: rpi-raspbian
-    version: sdhibit
+  - distribution: ubuntu
+    version: latest
     init: /sbin/init
     run_opts: ""
     playbook: test.yml
