@@ -13,7 +13,7 @@ services:
 
 before_install:
   # Pull container
-  - 'sudo docker pull ${version}/${distribution}'
+  - 'sudo docker pull ${distribution}/${version}'
   # Customize container
   - 'sudo docker build --rm=true --file=tests/Dockerfile.${distribution} --tag=${distribution}:ansible tests'
  
