@@ -4,7 +4,18 @@ FROM ubuntu:14.04
 # Installation de curl avec apt-get
 RUN apt-get update \
 && apt-get install -y curl \
-&& rm -rf /var/lib/apt/lists/*
+
+
+
+# Install Ansible
+RUN apt-get install -y software-properties-common git \
+&& apt-add-repository -y ppa:ansible/ansible \
+&& apt-get update \
+&& apt-get install -y ansible \
+&& apt-get -y clean
+
+# Install Ansible inventory file
+RUN echo "[local]\nlocalhost ansible_connection=local" > /etc/ansible/hosts
 
 # Installation de Node.js à partir du site officiel
 RUN curl -LO "https://nodejs.org/dist/v0.12.5/node-v0.12.5-linux-x64.tar.gz" \
@@ -32,14 +43,3 @@ VOLUME /app/log
 # On lance le serveur quand on démarre le conteneur
 CMD node server.js
 #
-#FROM ubuntu:14.04
-#RUN apt-get -y update
-
-# Install Ansible
-#RUN apt-get install -y software-properties-common git
-#RUN apt-add-repository -y ppa:ansible/ansible
-#RUN apt-get -y update
-#RUN apt-get install -y ansible
-
-# Install Ansible inventory file
-#RUN echo "[local]\nlocalhost ansible_connection=local" > /etc/ansible/hosts
