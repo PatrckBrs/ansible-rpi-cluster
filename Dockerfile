@@ -5,7 +5,8 @@ FROM resin/rpi-raspbian:latest
 RUN apt-get update
 RUN apt-get install -y ansible \
   git \
-  curl
+  curl \
+  python
   
 RUN apt-get -y clean
 
